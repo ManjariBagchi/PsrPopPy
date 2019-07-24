@@ -53,6 +53,7 @@ c
 c     Main loop, integrate out to given dm
 c     
       dist=dstep
+ 96   continue
       if(dist.LE.maxd) then
 c
 c        calculate local position
@@ -71,6 +72,7 @@ c        integrated far enough?
 c      
          if (dist.gt.dkpc) goto 999
        dist=dist+dstep
+       go to 96
       endif
  999  dm=dmint
       end
